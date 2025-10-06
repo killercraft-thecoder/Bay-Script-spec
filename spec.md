@@ -138,7 +138,7 @@ the snippets may be slighlty inancurate since some forgot the \n's needed , ut i
     - Returns the integer code of the character at `index`.  
   - `setCharCode <cstrVar> <index> <value>`  
     - Sets the character at `index` to the given integer code.  
-  - `getCStr module.component>`  
+  - `getCStr <module.component>`  
     - User‑accessible function.  
     - Takes a backend module component reference (e.g. `somemodule.abc`).  
     - Returns a **linked variable**:
