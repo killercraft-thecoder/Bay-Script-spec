@@ -181,5 +181,20 @@ the snippets may be slighlty inancurate since some forgot the \n's needed , ut i
   - `exists` is a utility for safe checks before attempting to run or access a module.  
   - These utilities are intended for advanced use and backend/module integration, not everyday scripting.
 
+### tables
+
+- Provides access to statically defined, immutable numeric tables.
+- **Functions**:
+  - `readIndex(<table>, <index>)`  
+    - Returns the integer value at the specified `index` in the static `table`.  
+    - Behavior for out-of-bounds access is implementation-defined.  
+    - Tables must be declared using the `static` keyword at the top level.
+
+- **Static Table Declaration**:
+  - `static <name> = [<int>, <int>, ...]`  
+    - Declares a globally scoped, immutable table.  
+    - Only integer values are allowed.  
+    - Table contents cannot be modified after declaration.  
+    - Table names must be unique within the module.
 
 ---
