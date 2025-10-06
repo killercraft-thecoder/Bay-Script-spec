@@ -1,22 +1,56 @@
-# Lame , we arent even using the 2 functions it provides,  input and print , bruh
+# Potato Quantum Evaluation via Turing Simulation
 import io
 
-function double (a)
-    return a + a
+# Static tape: 0 = mashed, 1 = entangled, 2 = undecided
+static tape = [1, 0, 2, 1, 0, 2, 1, 1, 0, 2]
+
+# Global head position and potato state
+var head = 0
+var entangledCount = 0
+var mashedCount = 0
+
+# Function to read tape symbol
+function readTape (pos)
+    return [call tables.readIndex tape pos]
 end
 
-# Comments must be on the start of a line , the global examples make a globla varible y!
-function showoffglobal (x)
-   global y = x + x
+# Function to evaluate symbol
+function evalSymbol (sym)
+    if sym == 1
+        global entangledCount = entangledCount + 1
+    elif sym == 0
+        global mashedCount = mashedCount + 1
+    else
+        # undecided potato, clearly a philosophical crisis
+        call io.print 42  # 42 = the answer to everything
+    end
+    return 0
 end
 
-# this function shows off horribly nested functions!, inner funciotns cannot acces outer varilbes but can acces global oens and varibles htey thesmelfs define!
-function nest0 (a)
-   function nest1 (b)
-       function nest2 (c)
-           function nest3 (d)
-              # oh no stack blunder (not a thing just making a horrible joke about how deeply nested it is)
-           end
-        end
+# Function to simulate tape scanning
+function scanTape (pos)
+    var symbol = [call readTape pos]
+    call evalSymbol symbol
+    var next = pos + 1
+    if next < 10
+        goto scanTape next
+    else
+        return 0
     end
 end
+
+# Function to decide potato fate
+function decidePotato ()
+    if entangledCount > mashedCount
+        call io.print 1  # Potato is quantum-entangled
+    elif mashedCount > entangledCount
+        call io.print 0  # Potato is just mashed
+    else
+        call io.print 99  # Potato is in superposition
+    end
+    return 0
+end
+
+# Entry point
+call scanTape head
+call decidePotato

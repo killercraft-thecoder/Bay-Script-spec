@@ -134,11 +134,11 @@ the snippets may be slighlty inancurate since some forgot the \n's needed , ut i
 
 - Provides operations for working with raw C‑style strings.
 - **Functions**:
-  - `getCharCode(<cstrVar>, <index>)`  
+  - `getCharCode <cstrVar>, <index>`  
     - Returns the integer code of the character at `index`.  
-  - `setCharCode(<cstrVar>, <index>, <value>)`  
+  - `setCharCode <cstrVar> <index> <value>`  
     - Sets the character at `index` to the given integer code.  
-  - `getCStr(<module.component>)`  
+  - `getCStr module.component>`  
     - User‑accessible function.  
     - Takes a backend module component reference (e.g. `somemodule.abc`).  
     - Returns a **linked variable**:
@@ -155,7 +155,7 @@ the snippets may be slighlty inancurate since some forgot the \n's needed , ut i
 - Provides utilities that are difficult or inefficient to implement directly in Bay Script.
 
 - **Functions**:
-  - `run(<cstrVar>)`  
+  - `run <cstrVar>`  
     - Executes a Bay Script module (a `.bs` file) or a named module.  
     - Argument must be a **CSTR linked variable** (from `cstr.getCStr`).  
     - The linked variable represents either:
@@ -163,15 +163,15 @@ the snippets may be slighlty inancurate since some forgot the \n's needed , ut i
       - A path to a Bay Script file.  
     - Runs the specified module in the current environment, similar to `import`, but invoked dynamically at runtime.
 
-  - `getInt(<cstrVar>)`  
+  - `getInt <cstrVar>`  
     - Reads an integer value from a linked variable.  
     - Useful for extracting numeric values from backend‑linked data.
 
-  - `setInt(<cstrVar>, <int>)`  
+  - `setInt <cstrVar> <int>`  
     - Writes an integer value into a linked variable.  
     - Allows Bay Script to update backend‑linked data directly.
 
-  - `exists(<cstrVar>)`  
+  - `exists <cstrVar>`  
     - Checks if a given linked variable or module reference exists.  
     - Returns `1` if it exists, `0` otherwise.
 
@@ -185,7 +185,7 @@ the snippets may be slighlty inancurate since some forgot the \n's needed , ut i
 
 - Provides access to statically defined, immutable numeric tables.
 - **Functions**:
-  - `readIndex(<table>, <index>)`  
+  - `readIndex <table> <index>`  
     - Returns the integer value at the specified `index` in the static `table`.  
     - Behavior for out-of-bounds access is implementation-defined.  
     - Tables must be declared using the `static` keyword at the top level.
