@@ -1,0 +1,22 @@
+# Lame , we arent even using the 2 functions it provides,  input and print , bruh
+import io
+
+function double (a)
+    return a + a
+end
+
+# Comments must be on the start of a line , the global examples make a globla varible y!
+function showoffglobal (x)
+   global y = x + x
+end
+
+# this function shows off horribly nested functions!, inner funciotns cannot acces outer varilbes but can acces global oens and varibles htey thesmelfs define!
+function nest0 (a)
+   function nest1 (b)
+       function nest2 (c)
+           function nest3 (d)
+              # oh no stack blunder (not a thing just making a horrible joke about how deeply nested it is)
+           end
+        end
+    end
+end
